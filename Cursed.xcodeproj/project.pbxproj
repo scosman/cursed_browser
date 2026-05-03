@@ -14,7 +14,21 @@
 		A1000005 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005 /* CanvasView.swift */; };
 		A1000006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000006 /* Assets.xcassets */; };
 		A1000007 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007 /* WelcomeView.swift */; };
+		A1000008 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008 /* Errors.swift */; };
+		A1000009 /* URLNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000009 /* URLNormalizer.swift */; };
+		A100000A /* PageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000A /* PageFetcher.swift */; };
+		A100000B /* URLNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000B /* URLNormalizerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A200000D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5000001;
+			remoteInfo = Cursed;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A2000001 /* CursedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursedApp.swift; sourceTree = "<group>"; };
@@ -24,11 +38,23 @@
 		A2000005 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		A2000006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2000007 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A2000008 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		A2000009 /* URLNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLNormalizer.swift; sourceTree = "<group>"; };
+		A200000A /* PageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFetcher.swift; sourceTree = "<group>"; };
+		A200000B /* URLNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLNormalizerTests.swift; sourceTree = "<group>"; };
 		A2000010 /* Cursed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cursed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A200000C /* CursedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CursedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A3000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3000002 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				A4000002 /* Cursed */,
+				A4000004 /* CursedTests */,
 				A4000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +82,9 @@
 				A2000004 /* ChromeBar.swift */,
 				A2000005 /* CanvasView.swift */,
 				A2000007 /* WelcomeView.swift */,
+				A2000008 /* Errors.swift */,
+				A2000009 /* URLNormalizer.swift */,
+				A200000A /* PageFetcher.swift */,
 				A2000006 /* Assets.xcassets */,
 			);
 			path = Cursed;
@@ -64,8 +94,17 @@
 			isa = PBXGroup;
 			children = (
 				A2000010 /* Cursed.app */,
+				A200000C /* CursedTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A4000004 /* CursedTests */ = {
+			isa = PBXGroup;
+			children = (
+				A200000B /* URLNormalizerTests.swift */,
+			);
+			path = CursedTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +126,23 @@
 			productName = Cursed;
 			productReference = A2000010 /* Cursed.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A5000002 /* CursedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000004 /* Build configuration list for PBXNativeTarget "CursedTests" */;
+			buildPhases = (
+				A6000003 /* Sources */,
+				A3000002 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A200000E /* PBXTargetDependency */,
+			);
+			name = CursedTests;
+			productName = CursedTests;
+			productReference = A200000C /* CursedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -112,6 +168,7 @@
 			projectRoot = "";
 			targets = (
 				A5000001 /* Cursed */,
+				A5000002 /* CursedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -138,10 +195,29 @@
 				A1000004 /* ChromeBar.swift in Sources */,
 				A1000005 /* CanvasView.swift in Sources */,
 				A1000007 /* WelcomeView.swift in Sources */,
+				A1000008 /* Errors.swift in Sources */,
+				A1000009 /* URLNormalizer.swift in Sources */,
+				A100000A /* PageFetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000B /* URLNormalizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A200000E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5000001 /* Cursed */;
+			targetProxy = A200000D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A9000001 /* Debug */ = {
@@ -298,6 +374,40 @@
 			};
 			name = Release;
 		};
+		A9000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cursed.browser.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cursed.app/Contents/MacOS/Cursed";
+			};
+			name = Debug;
+		};
+		A9000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cursed.browser.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cursed.app/Contents/MacOS/Cursed";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -315,6 +425,15 @@
 			buildConfigurations = (
 				A9000003 /* Debug */,
 				A9000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7000004 /* Build configuration list for PBXNativeTarget "CursedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9000005 /* Debug */,
+				A9000006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

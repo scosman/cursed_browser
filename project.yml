@@ -18,3 +18,16 @@ targets:
         MACOSX_DEPLOYMENT_TARGET: "14.0"
         GENERATE_INFOPLIST_FILE: YES
         PRODUCT_NAME: Cursed
+  CursedTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - CursedTests
+    dependencies:
+      - target: Cursed
+    settings:
+      base:
+        SWIFT_VERSION: "5"
+        PRODUCT_BUNDLE_IDENTIFIER: com.cursed.browser.tests
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        GENERATE_INFOPLIST_FILE: YES

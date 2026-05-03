@@ -18,11 +18,14 @@ struct ChromeBar: View {
             TextField("Enter URL", text: $appState.urlText)
                 .textFieldStyle(.roundedBorder)
                 .disabled(appState.apiKey == nil)
+                .onSubmit {
+                    appState.submitURL()
+                }
 
-            Button(action: {}) {
+            Button(action: { appState.submitURL() }) {
                 Image(systemName: "arrow.right")
             }
-            .disabled(appState.apiKey == nil)
+            .disabled(appState.apiKey == nil || appState.isLoading)
         }
         .padding(8)
     }

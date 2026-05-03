@@ -7,10 +7,13 @@ struct CanvasView: View {
         Group {
             if appState.apiKey == nil {
                 WelcomeView(appState: appState)
+            } else if appState.isLoading {
+                ProgressView("Loading...")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 Color(nsColor: .windowBackgroundColor)
             }
         }
-        .aspectRatio(3.0/2.0, contentMode: .fit)
+        .aspectRatio(3.0 / 2.0, contentMode: .fit)
     }
 }
