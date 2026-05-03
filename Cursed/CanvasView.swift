@@ -1,0 +1,16 @@
+import SwiftUI
+
+struct CanvasView: View {
+    @ObservedObject var appState: AppState
+
+    var body: some View {
+        Group {
+            if appState.apiKey == nil {
+                WelcomeView(appState: appState)
+            } else {
+                Color(nsColor: .windowBackgroundColor)
+            }
+        }
+        .aspectRatio(3.0/2.0, contentMode: .fit)
+    }
+}
