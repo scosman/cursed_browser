@@ -18,3 +18,5 @@ Package.resolved
 # Misc
 *.swp
 *~
+
+.env

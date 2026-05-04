@@ -86,8 +86,7 @@ enum OpenAIClient {
         let requestBody = ImageRequest(
             model: "gpt-image-2",
             prompt: prompt,
-            size: "1536x1024",
-            response_format: "b64_json"
+            size: "1536x1024"
         )
 
         let data = try await post(
@@ -178,7 +177,6 @@ enum OpenAIClient {
         let model: String
         let prompt: String
         let size: String
-        let response_format: String
     }
 
     struct ImageResponse: Decodable {
