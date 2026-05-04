@@ -2,12 +2,6 @@
 
 Instead of using a rendering engine like some kind of *nerd*, Cursed Browser asks an LLM to look at the page's HTML and draw what it thinks it looks like. Every page load is a surprise. Every render is a work of art. Nothing is correct. It's perfect.
 
-## Roadmap
-
-**V1** (current): Ship it. An LLM looks at HTML and draws what it thinks a browser would show. Technically a browser. Legally, probably also a browser. Morally, questionable.
-
-**V2**: The LLM writes a brand new browser engine from scratch every time you load a page. No bloat -- the engine only supports exactly the features that page needs. Extremely efficient. What could go wrong.
-
 ## Examples: Cursed vs Safari
 
 <p align="center">
@@ -29,3 +23,9 @@ Instead of using a rendering engine like some kind of *nerd*, Cursed Browser ask
   <img src="https://github.com/user-attachments/assets/5c61594d-4477-429a-9702-c0a6e376a9bd" width="45%" />
   <img src="https://github.com/user-attachments/assets/3b6bcc0c-b803-4deb-8a5b-64bc3b334804" width="45%" />
 </p>
+
+## Roadmap
+
+**V1** (current): Ship it. An LLM looks at HTML and draws what it thinks a browser would show. Technically a browser. Legally, probably also a browser. Morally, questionable.
+
+**V2**: The LLM writes a brand new browser engine from scratch every time you load a page. No bloat -- the engine only supports exactly the features that page needs. Extremely efficient. What could go wrong.
