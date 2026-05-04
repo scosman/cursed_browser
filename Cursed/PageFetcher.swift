@@ -8,6 +8,7 @@ enum PageFetcher {
             forHTTPHeaderField: "User-Agent"
         )
         request.setValue("en-US,en;q=0.9", forHTTPHeaderField: "Accept-Language")
+        request.timeoutInterval = 240
 
         let (data, response): (Data, URLResponse)
         do {

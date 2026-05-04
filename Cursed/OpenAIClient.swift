@@ -16,7 +16,7 @@ enum OpenAIClient {
 
     static func buildRenderPrompt(html: String) -> String {
         """
-        Render this HTML to PNG. Don't render it using an HTML renderer — read it and draw me an image of what it would render as. No SVGs, no code. Just read and draw.
+        Render this HTML to PNG. Don't render it using an HTML renderer — read it and draw me an image of what it would render as. No SVGs, no code. Just read and draw. Render the page in 3:2 aspect ratio as if in a browser of 1000px width; this may result in the page being truncated (some content under the fold), that's okay and expected; don't attempt to render whole page to the bottom unless the page is short.
 
         ```
         \(html)
@@ -56,7 +56,7 @@ enum OpenAIClient {
         let prompt = buildSimplifyPrompt(html: html)
 
         let requestBody = ChatRequest(
-            model: "gpt-5.5",
+            model: "gpt-5.4-mini",
             messages: [ChatMessage(role: "user", content: prompt)]
         )
 
@@ -128,6 +128,7 @@ enum OpenAIClient {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.timeoutInterval = 240
         request.httpBody = try JSONEncoder().encode(body)
 
         let (data, response): (Data, URLResponse)

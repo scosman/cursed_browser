@@ -13,12 +13,13 @@ struct CanvasView: View {
             } else if let image = appState.currentImage {
                 Image(nsImage: image)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .clipped()
             } else {
                 Color(nsColor: .windowBackgroundColor)
             }
         }
-        .aspectRatio(3.0 / 2.0, contentMode: .fit)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
