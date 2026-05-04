@@ -10,6 +10,11 @@ struct CanvasView: View {
             } else if appState.isLoading {
                 ProgressView("Loading...")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if let image = appState.currentImage {
+                Image(nsImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 Color(nsColor: .windowBackgroundColor)
             }

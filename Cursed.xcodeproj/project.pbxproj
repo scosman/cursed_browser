@@ -18,6 +18,9 @@
 		A1000009 /* URLNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000009 /* URLNormalizer.swift */; };
 		A100000A /* PageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000A /* PageFetcher.swift */; };
 		A100000B /* URLNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000B /* URLNormalizerTests.swift */; };
+		A100000C /* OpenAIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000F /* OpenAIClient.swift */; };
+		A100000D /* RenderPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011 /* RenderPipeline.swift */; };
+		A100000E /* OpenAIClientPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012 /* OpenAIClientPromptTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		A2000009 /* URLNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLNormalizer.swift; sourceTree = "<group>"; };
 		A200000A /* PageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFetcher.swift; sourceTree = "<group>"; };
 		A200000B /* URLNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLNormalizerTests.swift; sourceTree = "<group>"; };
+		A200000F /* OpenAIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIClient.swift; sourceTree = "<group>"; };
+		A2000011 /* RenderPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipeline.swift; sourceTree = "<group>"; };
+		A2000012 /* OpenAIClientPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIClientPromptTests.swift; sourceTree = "<group>"; };
 		A2000010 /* Cursed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cursed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A200000C /* CursedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CursedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +91,8 @@
 				A2000008 /* Errors.swift */,
 				A2000009 /* URLNormalizer.swift */,
 				A200000A /* PageFetcher.swift */,
+				A200000F /* OpenAIClient.swift */,
+				A2000011 /* RenderPipeline.swift */,
 				A2000006 /* Assets.xcassets */,
 			);
 			path = Cursed;
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				A200000B /* URLNormalizerTests.swift */,
+				A2000012 /* OpenAIClientPromptTests.swift */,
 			);
 			path = CursedTests;
 			sourceTree = "<group>";
@@ -198,6 +207,8 @@
 				A1000008 /* Errors.swift in Sources */,
 				A1000009 /* URLNormalizer.swift in Sources */,
 				A100000A /* PageFetcher.swift in Sources */,
+				A100000C /* OpenAIClient.swift in Sources */,
+				A100000D /* RenderPipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A100000B /* URLNormalizerTests.swift in Sources */,
+				A100000E /* OpenAIClientPromptTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

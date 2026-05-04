@@ -8,6 +8,7 @@ final class AppState: ObservableObject {
     @Published var currentImage: NSImage? = nil
     @Published var currentError: CursedError? = nil
 
+    let pipeline = RenderPipeline()
     var currentTask: Task<Void, Never>?
 
     func submitURL() {
@@ -21,13 +22,11 @@ final class AppState: ObservableObject {
             defer { isLoading = false }
 
             do {
-                let url = try URLNormalizer.normalize(raw)
-                let html = try await PageFetcher.fetch(url)
+                let image = try await pipeline.load(url: raw, apiKey: key)
 
                 guard !Task.isCancelled else { return }
 
-                // Placeholder: log HTML length until the render pipeline exists
-                print("[Cursed] Fetched \(url.absoluteString): \(html.count) characters")
+                currentImage = image
             } catch let error as CursedError {
                 guard !Task.isCancelled else { return }
                 currentError = error
