@@ -20,6 +20,11 @@ Instead of using a rendering engine like some kind of *nerd*, Cursed Browser ask
 </p>
 
 <p align="center">
+  <img src="https://github.com/user-attachments/assets/115e8a55-4f6f-4a9e-9d7f-c230e0cb760b" width="45%" />
+  <img src="https://github.com/user-attachments/assets/ae6a313f-6a27-4a65-b9a7-01fcdc72778b" width="45%" />
+</p>
+
+<p align="center">
   <img src="https://github.com/user-attachments/assets/5c61594d-4477-429a-9702-c0a6e376a9bd" width="45%" />
   <img src="https://github.com/user-attachments/assets/3b6bcc0c-b803-4deb-8a5b-64bc3b334804" width="45%" />
 </p>
