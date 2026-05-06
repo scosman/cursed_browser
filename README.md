@@ -29,8 +29,16 @@ Instead of using a rendering engine like some kind of *nerd*, Cursed Browser ask
   <img src="https://github.com/user-attachments/assets/3b6bcc0c-b803-4deb-8a5b-64bc3b334804" width="45%" />
 </p>
 
+## Compared to other "AI native" browsers
+
+| Feature | Arc | Dia | Comet | Atlas | **Cursed** |
+|---|:-:|:-:|:-:|:-:|:-:|
+| HTML parsed by an LLM token-by-token | ❌ | ❌ | ❌ | ❌ | ✅ |
+| CSS interpreted via next-token prediction | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Pixels hallucinated by a VLM | ❌ | ❌ | ❌ | ❌ | ✅ |
+
 ## Roadmap
 
-**V1** (current): Ship it. An LLM looks at HTML and draws what it thinks a browser would show. Technically a browser. Legally, probably also a browser. Morally, questionable.
+**V1** (current, open-source): Ship it. An LLM looks at HTML and draws what it thinks a browser would show. Technically a browser. Legally, probably also a browser. Morally, questionable.
 
-**V2**: The LLM writes a brand new browser engine from scratch every time you load a page. No bloat -- the engine only supports exactly the features that page needs. Extremely efficient. What could go wrong.
+**V2**: (oversubscribed $200m pre-seed, enterprise) The LLM writes a brand new browser engine from scratch every time you load a page. No bloat -- the engine only supports exactly the features that page needs. Extremely efficient.
