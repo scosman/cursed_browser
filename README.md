@@ -1,6 +1,6 @@
 # Cursed Browser: Rendering Engine using Visual-LLMs
 
-Instead of using a rendering engine like some kind of *nerd*, Cursed Browser asks an LLM to look at the page's HTML and draw what it thinks it looks like. Every page load is a surprise. Every render is a work of art. Nothing is correct. It's perfect.
+Instead of using a rendering engine like some kind of *nerd*, Cursed Browser asks an LLM to look at the page's HTML and draw what it thinks it looks like. Every page load is a surprise. Every render is a work of art. It's better than correct, it's *AI Native*.
 
 ## Examples: Cursed vs Safari
 
