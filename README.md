@@ -1,6 +1,6 @@
 # Cursed Browser: Rendering Engine using Visual-LLMs
 
-Instead of using a rendering engine like some kind of *nerd*, Cursed Browser asks an LLM to look at the page's HTML and draw what it thinks it looks like. Every page load is a surprise. Every render is a work of art. It's better than correct, it's *AI Native*.
+Cursed Browser asks an LLM to look at the page's HTML and draw what it thinks it looks like. Every page load is a surprise. Every render is a work of art. It's better than correct, it's *AI Native*.
 
 ## Examples: Cursed vs Safari
 
@@ -34,7 +34,7 @@ Instead of using a rendering engine like some kind of *nerd*, Cursed Browser ask
   <img src="https://github.com/user-attachments/assets/3b6bcc0c-b803-4deb-8a5b-64bc3b334804" width="45%" alt="scosman.net homepage rendered by safari"/>
 </p>
 
-## Compared to other "AI native" browsers
+## Compared to other "AI Native" browsers
 
 | Feature | Arc | Dia | Comet | Atlas | **Cursed** |
 |---|:-:|:-:|:-:|:-:|:-:|
