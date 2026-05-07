@@ -20,8 +20,13 @@ Instead of using a rendering engine like some kind of *nerd*, Cursed Browser ask
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/115e8a55-4f6f-4a9e-9d7f-c230e0cb760b" width="45%" alt="acid 3 test rendered by cursed"/>
+  <img src="https://github.com/user-attachments/assets/3db95555-7c35-4410-bb40-7e0709b617be" width="45%" alt="acid 3 test rendered by cursed"/>
   <img src="https://github.com/user-attachments/assets/ae6a313f-6a27-4a65-b9a7-01fcdc72778b" width="45%" alt="acid 3 test rendered by safari"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/60abe8f9-fab8-400f-94e7-493a51ecf999" width="45%" alt="google search for 'cursed browser' rendered by cursed"/>
+  <img src="https://github.com/user-attachments/assets/176b4fec-51d1-4fbc-9cbd-08470dc3d49d" width="45%" alt="google search for 'cursed browser' rendered by cursed"/>
 </p>
 
 <p align="center">
@@ -39,6 +44,8 @@ Instead of using a rendering engine like some kind of *nerd*, Cursed Browser ask
 
 ## Roadmap
 
-**V1** (current, open-source): Ship it. An LLM looks at HTML and draws what it thinks a browser would show. Technically a browser. Legally, probably also a browser. Morally, questionable.
+**V1**: An LLM looks at HTML and draws what it thinks a browser would show. Technically a browser. Legally, probably also a browser. Morally, questionable.
+
+**[V1.1](https://github.com/scosman/cursed_browser/commit/ab64ae13eb6548650ec95bde889739c7825c5d3e)** (current, open-source): Break unnecessary dependency on the web. The model memorized it during pretraining; the HTTP fetch is a courtesy. Bot blocks and JS hydration can't stop us. The HTML was only ever a suggestion. Acid test 100/100.
 
 **V2**: (oversubscribed $200m pre-seed, enterprise) The LLM writes a brand new browser engine from scratch every time you load a page. No bloat -- the engine only supports exactly the features that page needs. Extremely efficient.
