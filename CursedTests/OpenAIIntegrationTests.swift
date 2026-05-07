@@ -61,7 +61,7 @@ final class OpenAIIntegrationTests: XCTestCase {
           <script>alert('x')</script>
         </body></html>
         """
-        let result = try await OpenAIClient.simplifyHTML(html, apiKey: apiKey)
+        let result = try await OpenAIClient.simplifyHTML(html, url: "https://example.com/", apiKey: apiKey)
         XCTAssertFalse(result.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
                        "Simplified HTML should be non-empty")
     }

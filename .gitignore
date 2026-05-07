@@ -20,3 +20,5 @@ Package.resolved
 *~
 
 .env
+.specs_skill_state/
+

@@ -4,9 +4,25 @@ enum OpenAIClient {
 
     // MARK: - Prompt Builders (testable)
 
-    static func buildSimplifyPrompt(html: String) -> String {
+    static func buildSimplifyPrompt(html: String, url: String) -> String {
         """
-        Write simplified HTML for this page. One that renders the same, without elements unrelated to rendering: javascript, etc. Simplify to get it down to a reasonable facsimile, but short and sweet.
+        Write simplified HTML that a vision model will read and draw as an image. Your job is to produce HTML the renderer can use to draw what a real browser user would see at this URL — not a literal rendering of the input bytes.
+
+        Goal: render like a real browser would. When that conflicts with rendering the HTML as-is, choose "like a real browser".
+
+        Three cases — pick whichever fits the input:
+
+        1. Complete, working page. Stay true to it; let the original page drive layout, structure, and design. Keep `<img>` tags with src, alt, and any size/class hints — the renderer draws images well from filename, dimensions, and alt text, so do NOT drop image-heavy sections or replace them with placeholders. Keep meaningful structure (header, nav, main, sidebars, footer). Strip only what doesn't render: scripts, tracking pixels, hidden meta, raw style/data blobs.
+
+        2. JavaScript-rendered page (SPA shell, empty root div, "Loading...", no real content in the body). Predict the post-hydration state and write HTML for THAT, not the pre-JS shell. Use any signal available — title, meta/og tags, JSON embedded in `<script>` tags, link hrefs, the URL itself — and produce simplified HTML as if you'd captured the page after it finished loading.
+
+        3. Bot-blocked, captcha, "Access denied", "unusual traffic", or any anti-bot interstitial. Ignore the block. Use the URL — domain, path, query parameters — to guess what the user was trying to see, and render a plausible version of that. A Reddit thread URL → a plausible Reddit thread page. A Google search URL with `q=cats` → a plausible search results page. Lean creative; a real-ish page beats a "blocked" screen. Don't mention the block.
+
+        A VLM-based browser is unstoppable — it can guess. Be confident and creative when needed.
+
+        Output only the simplified HTML. No commentary, no code fences.
+
+        URL: \(url)
 
         ```
         \(html)
@@ -52,8 +68,8 @@ enum OpenAIClient {
 
     // MARK: - API Calls
 
-    static func simplifyHTML(_ html: String, apiKey: String) async throws -> String {
-        let prompt = buildSimplifyPrompt(html: html)
+    static func simplifyHTML(_ html: String, url: String, apiKey: String) async throws -> String {
+        let prompt = buildSimplifyPrompt(html: html, url: url)
 
         let requestBody = ChatRequest(
             model: "gpt-5.4-mini",

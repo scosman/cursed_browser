@@ -7,19 +7,33 @@ final class OpenAIClientPromptTests: XCTestCase {
 
     func testSimplifyPromptContainsHTML() {
         let html = "<html><body><h1>Hello</h1></body></html>"
-        let prompt = OpenAIClient.buildSimplifyPrompt(html: html)
+        let prompt = OpenAIClient.buildSimplifyPrompt(html: html, url: "https://example.com/")
 
         XCTAssertTrue(prompt.contains("```\n\(html)\n```"),
                        "Simplify prompt should embed the HTML inside fenced code blocks")
     }
 
+    func testSimplifyPromptContainsURL() {
+        let url = "https://reddit.com/r/cats/comments/abc"
+        let prompt = OpenAIClient.buildSimplifyPrompt(html: "<p>test</p>", url: url)
+
+        XCTAssertTrue(prompt.contains(url),
+                       "Simplify prompt should embed the URL so the model can use it as signal")
+    }
+
     func testSimplifyPromptContainsInstruction() {
-        let prompt = OpenAIClient.buildSimplifyPrompt(html: "<p>test</p>")
+        let prompt = OpenAIClient.buildSimplifyPrompt(html: "<p>test</p>", url: "https://example.com/")
 
         XCTAssertTrue(prompt.contains("Write simplified HTML"),
                        "Simplify prompt should include the simplification instruction")
-        XCTAssertTrue(prompt.contains("without elements unrelated to rendering"),
-                       "Simplify prompt should mention stripping non-visual elements")
+        XCTAssertTrue(prompt.contains("render like a real browser would"),
+                       "Simplify prompt should state the real-browser rendering goal")
+        XCTAssertTrue(prompt.contains("JavaScript-rendered"),
+                       "Simplify prompt should cover the JS-rendered case")
+        XCTAssertTrue(prompt.contains("Bot-blocked"),
+                       "Simplify prompt should cover the bot-blocked case")
+        XCTAssertTrue(prompt.contains("`<img>`"),
+                       "Simplify prompt should instruct keeping <img> tags rather than dropping image-heavy sections")
     }
 
     // MARK: - Render prompt
