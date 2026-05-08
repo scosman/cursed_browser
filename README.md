@@ -47,7 +47,7 @@ Cursed Browser asks an LLM to look at the page's HTML and draw what it thinks it
 
 **V1**: An LLM looks at HTML and draws what it thinks a browser would show. Technically a browser. Legally, probably also a browser. Morally, questionable.
 
-**[V1.1](https://github.com/scosman/cursed_browser/commit/ab64ae13eb6548650ec95bde889739c7825c5d3e)** (current, open-source): Break unnecessary dependency on the web; the model memorized it during pretraining. The live HTTP fetch is a formality, a polite
+**[V1.1](https://github.com/scosman/cursed_browser/commit/ab64ae13eb6548650ec95bde889739c7825c5d3e)** (current, open-source): Break unnecessary dependency on the web; the model memorized it during pretraining anyways. The HTTP fetch is a formality, a polite
   nod to legacy infrastructure. Acid test 100/100.
 
 **V2**: (oversubscribed $200m pre-seed, enterprise) The LLM writes a brand new browser engine from scratch every time you load a page. No bloat -- the engine only supports exactly the features that page needs. Extremely efficient.
