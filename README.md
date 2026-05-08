@@ -41,6 +41,7 @@ Cursed Browser asks an LLM to look at the page's HTML and draw what it thinks it
 | HTML parsed by an LLM token-by-token | ❌ | ❌ | ❌ | ❌ | ✅ |
 | CSS interpreted via next-token prediction | ❌ | ❌ | ❌ | ❌ | ✅ |
 | Pixels hallucinated by a VLM | ❌ | ❌ | ❌ | ❌ | ✅ |
+| All hyphens upgraded to em—dashes | ❌ | ❌ | ❌ | ❌ | ✅ |
 
 ## Roadmap
 
